@@ -12,7 +12,6 @@ import PostSingle           from 'components/PostSingle.js';
 import Contact              from 'components/Contact.js';
 import Header               from 'components/Header.js';
 import Footer               from 'components/Footer.js';
-
 import AnimatedSwitch       from "components/animated_switch";
 
 import '../assets/css/App.min.css';

@@ -7,21 +7,21 @@ body,
 }
 
 body{
-  background: blue; 
+  background: #700006; 
   color: #ffffff;
+}
+
+.single-post{
+    h3{
+      a{
+        color: #fff;
+      }
+    }
 }
 
 .header a{
   color: #ffffff;
 }
-
-// .contact-page{
-//   background: red; 
-// }
-
-// .home-page{
-//   background: green; 
-// }
 
 .App {
     position: relative;
@@ -117,3 +117,6 @@ body{
         }
     }
 }
+// .goBack{
+//   opacity:1!important; 
+// }

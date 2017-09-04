@@ -13,6 +13,7 @@ class HomeComponent extends React.Component {
         return (
             <div className="home-page">
                 <h1>{pageData.title.rendered}</h1>
+                <small>I'm being output from the component</small>
                 <div dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
             </div>
         );

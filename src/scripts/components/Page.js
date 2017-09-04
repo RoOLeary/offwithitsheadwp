@@ -6,7 +6,7 @@ class PageComponent extends React.Component {
 
         let location = this.props.location.pathname.split('/'); 
         let slug = location[1];
-         console.log('general-page')
+        //console.log('general-page')
         let pageData = DataStore.getPageBySlug(slug);
 
         return (

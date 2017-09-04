@@ -7,17 +7,13 @@ class HomeComponent extends React.Component {
         console.log('I am in the home component');   
     }
 
-
     render() {
         let pageData = DataStore.getPageBySlug('frontpage');
 
         return (
-            <div>
-                <h2>Homepage template</h2>
+            <div className="home-page">
                 <h1>{pageData.title.rendered}</h1>
-
                 <div dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
-               
             </div>
         );
     }

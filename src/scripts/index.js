@@ -17,6 +17,8 @@ import AnimatedSwitch       from "components/animated_switch";
 
 import '../assets/css/App.min.css';
 
+import { firstChild } from "../utils/helpers"; 
+
 import {
     BrowserRouter as Router,
     Route,
@@ -25,11 +27,11 @@ import {
     Link
 } from 'react-router-dom';
 
-const firstChild = props => {
-  const childrenArray = React.Children.toArray(props.children);
-  return childrenArray[0] || null;
-  console.log('appeared?');
-};
+// const firstChild = props => {
+//   const childrenArray = React.Children.toArray(props.children);
+//   return childrenArray[0] || null;
+//   console.log('appeared?');
+// };
 
 class AppInitializer {
 

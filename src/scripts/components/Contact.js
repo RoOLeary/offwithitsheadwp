@@ -15,12 +15,9 @@ class ContactComponent extends React.Component {
         let pageData = DataStore.getPageBySlug(slug);
 
         return (
-            <div className="contact-oage">
-                <h2>Contact page template</h2>
+            <div className="contact-page">
                 <h1>{pageData.title.rendered}</h1>
-
                 <div dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
-               
             </div>
         );
     }

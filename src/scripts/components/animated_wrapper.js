@@ -10,7 +10,14 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper
 			animate: new Animated.Value(0)
 		};
 	}
+	
 	componentDidMount() {
+		console.log("mounted yo");
+		Animated.spring(this.state.animate, { toValue: 1 }).start();
+	}
+	
+	
+	componentWillAppear(cb) {
 		console.log("componentWillAppear");
 		Animated.spring(this.state.animate, { toValue: 1 }).start();
 		cb();

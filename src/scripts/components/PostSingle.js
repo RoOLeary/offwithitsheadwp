@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';  
 import { withRouter } from 'react-router-dom';  
 
-import AnimatedWrapper from "../../AnimatedWrapper";
+import AnimatedWrapper from "./animated_wrapper.js";
 
 class PostSingleComponent extends React.Component{
 

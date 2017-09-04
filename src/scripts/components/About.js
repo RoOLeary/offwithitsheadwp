@@ -1,5 +1,5 @@
 import DataStore from 'flux/stores/DataStore.js'
-import AnimatedWrapper from "../../AnimatedWrapper";
+import AnimatedWrapper from "./animated_wrapper.js";
 
 class AboutComponent extends React.Component {
 

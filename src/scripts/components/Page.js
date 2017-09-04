@@ -1,29 +1,20 @@
 import DataStore from 'flux/stores/DataStore.js'
 import AnimatedWrapper from "../../AnimatedWrapper";
-
-class ContactComponent extends React.Component {
-
-    componentDidMount(){
-        console.log('contact component');
-    }
-
+class PageComponent extends React.Component {
     render() {
-        
+
         let location = this.props.location.pathname.split('/'); 
         let slug = location[1];
-        console.log(slug)
+         console.log('general-page')
         let pageData = DataStore.getPageBySlug(slug);
 
         return (
-            <div className="contact-oage">
-                <h2>Contact page template</h2>
+            <div>
                 <h1>{pageData.title.rendered}</h1>
-
                 <div dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
-               
             </div>
         );
     }
 }
-const Contact = AnimatedWrapper(ContactComponent);
-export default Contact;
+const Page = AnimatedWrapper(PageComponent); 
+export default Page;

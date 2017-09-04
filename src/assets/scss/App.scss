@@ -1,0 +1,111 @@
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+  background: blue; 
+  color: #ffffff;
+}
+
+.header a{
+  color: #ffffff;
+}
+
+.App {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+}
+  
+.animated-page-wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 62px;
+    width: 100%;
+    padding: 0 3rem;
+    z-index: 999;
+    a {
+        margin-right: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        &.active {
+            text-decoration: line-through;
+        }
+    }
+}
+
+.page {
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    padding: calc(62px + 3rem) 3rem 3rem 3rem;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        padding: 0 0 6rem 0;
+        margin: 0;
+        li {
+            display: flex;
+            width: calc(100% / 4 - 2rem);
+            min-height: 200px;
+            margin-bottom: 2rem;
+            margin-right: 2rem;
+            div {
+                display: flex;
+                flex: 1;
+                border: 1px solid white;
+            }
+            a {
+                display: flex;
+                flex: 1;
+                flex-flow: column;
+                padding: 4rem;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                text-decoration: none;
+                color: white;
+                &:hover {
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+    &.home {
+    	h1 {
+    		max-width: 30ch;
+            margin-top: 0;
+    	}
+        a {
+            color: #fff;
+            text-decoration: none;
+            &:hover {
+                text-decoration: line-through;
+            }
+        }
+    }
+}

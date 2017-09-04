@@ -27,12 +27,6 @@ import {
     Link
 } from 'react-router-dom';
 
-// const firstChild = props => {
-//   const childrenArray = React.Children.toArray(props.children);
-//   return childrenArray[0] || null;
-//   console.log('appeared?');
-// };
-
 class AppInitializer {
 
     templates = {

@@ -15,13 +15,13 @@ class PostList extends React.Component{
             <div className="all-posts">
                 <div className="row">
                      <div className="container">
-                        {posts.map((post) =>
-                        <div className="single-post" value={post.id}>
-                            <h3><Link key={post.id} to={`/posts/${post.slug}`}>{post.title.rendered}</Link></h3>
+                        {posts.map((post, i) =>
+                        <div className="single-post" key={i} value={post.id}>
+                            <h3><Link to={`/posts/${post.slug}`}>{post.title.rendered}</Link></h3>
                             <small> (Ha Ha Ha)</small>
                             <p>{post.date_gmt}</p>
                             <p dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
-                            <Link key={post.id} to={`/posts/${post.slug}`} style={{marginRight: '10px'}}>Go TO {post.title.rendered}</Link>
+                            <Link key={i} to={`/posts/${post.slug}`} style={{marginRight: '10px'}}>Go TO {post.title.rendered}</Link>
                         </div>)}
                     </div>
                 </div>

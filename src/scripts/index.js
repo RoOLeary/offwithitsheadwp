@@ -12,6 +12,7 @@ import PostSingle           from 'components/PostSingle.js';
 import Contact              from 'components/Contact.js';
 import Header               from 'components/Header.js';
 import Footer               from 'components/Footer.js';
+import NoMatch              from 'components/NoMatch.js';
 import AnimatedSwitch       from "components/animated_switch";
 
 import '../assets/css/App.min.css';
@@ -60,16 +61,17 @@ class AppInitializer {
                                 <Switch>
                                     <Route path="/" component={ Home } exact />
                                     <Route path="/about" component={ About } exact />
+                                    <Route path="/goals" component={ Page } exact />
                                     <Route path="/contact" component={ Contact } exact />
                                     <Route path="/posts" component={ Post } exact />
                                     <Route path="/posts/:slug" component={ PostSingle } />
-                                    <Route path="/:slug" component={ Page } />
+                                    <Route path="/:slug" component={ NoMatch } />
                                     {this.buildRoutes(response)}
                                     <Route render={() => { return <Redirect to="/" /> }} />
                                 </Switch> 
                             </TransitionGroup>
                         
-                        <Footer />
+                         <Footer />
                         </div>
                     </div>
                 </Router>

@@ -15,17 +15,17 @@ class Header extends React.Component {
                             <div className="row">
                                 <div className="col-xs-2">
                                     <div id="fh5co-logo">
-                                        <Link to="/">RoACT</Link></div>
-                                </div>
+                                        <Link to="/" key="home">RoACT</Link></div>
+                                    </div>
                                 <div className="col-xs-10 text-right menu-1">
                                     <ul>
                                     <Link to="/" style={{marginRight: '10px'}} >Home</Link>
                                     
-                                        {allPages.map((page) => {
-                                            if(page.slug != 'home'){
+                                        {allPages.map((page, i) => {
+                                            if(page.slug != 'frontpage'){
                                             return(
-                                                    <li><Link 
-                                                        key={page.id} 
+                                                    <li key={i}><Link 
+                                                        
                                                         to={`/${page.slug}`} 
                                                         style={{marginRight: '10px'}}
                                                     >

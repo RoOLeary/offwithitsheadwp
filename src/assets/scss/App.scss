@@ -16,11 +16,11 @@ body,
     }
 }
 
-.logo{
-    width: 50%;
-    float: left;
-    padding: 1% 0 1% 0%;
-}
+// .logo{
+//     width: 50%;
+//     float: left;
+//     padding: 1% 0 1% 0%;
+// }
 
 .header{
     float: right; 
@@ -234,9 +234,15 @@ body,
     color: #DD356E;
   }
   .fh5co-nav a {
-    padding: 5px 10px;
+    padding: 5px 0px;
     color: #000;
   }
+
+  .col-xs-2{
+      padding: 0; 
+  }
+
+
   @media screen and (max-width: 768px) {
     .fh5co-nav .menu-1 {
       display: none;

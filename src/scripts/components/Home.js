@@ -1,5 +1,6 @@
 import DataStore from 'flux/stores/DataStore.js'
 import AnimatedWrapper from "./animated_wrapper.js";
+import { Link } from 'react-router-dom'; 
 
 class HomeComponent extends React.Component {
 
@@ -22,7 +23,7 @@ class HomeComponent extends React.Component {
                                         <h1>{pageData.title.rendered}</h1>
                                         {/* <small>I'm being output from the component</small> */}
                                         <div dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
-                                        <p><a className="btn btn-primary btn-lg btn-demo" href="/shush">View Demo</a> <a className="btn btn-primary btn-lg btn-learn">Learn More</a></p>
+                                        <p><Link to={`/shush`} className="btn btn-primary btn-lg btn-demo">View Demo</Link><a className="btn btn-primary btn-lg btn-learn">Learn More</a></p>
                                     </div>
                                 </div>
                             </div>

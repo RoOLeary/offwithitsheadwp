@@ -34,7 +34,7 @@ class Footer extends React.Component {
                             <ul className="fh5co-footer-links">
                                 <li>221b Street, Dublin, Ireland</li>
                                 <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-                                <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+                                <li><a href="mailto:ronan@triggermovement.com">ronan@triggermovement.com</a></li>
                                 <li><a href="https://ronan-oleary.com">Danger Ro</a></li>
                             </ul>
                         </div>

@@ -47,11 +47,18 @@ class DataStore {
         })] || {};
     }
 
-     // Returns a Page by provided slug
+    // Returns a Page by provided slug
     getPostBySlug(slug){
         const posts = this.getState().data.posts;
         return posts[Object.keys(posts).find((post, i) => {
             return posts[post].slug === slug;
+        })] || {};
+    }
+
+    getCategoriesBySlug(id){
+        const cats = this.getState().data.cats;
+        return cats[Object.keys(cats).find((cat, i) => {
+            return cats[cat].id === id;
         })] || {};
     }
 

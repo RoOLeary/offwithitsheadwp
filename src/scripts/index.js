@@ -55,19 +55,22 @@ class AppInitializer {
                 <Router>
                     <div>
                         <Header />
-                        <TransitionGroup component={firstChild}>
-                            <Switch>
-                                <Route path="/" component={ Home } exact />
-                                <Route path="/about" component={ About } exact />
-                                <Route path="/contact" component={ Contact } exact />
-                                <Route path="/posts" component={ Post } exact />
-                                <Route path="/posts/:slug" component={ PostSingle } />
-                                <Route path="/:slug" component={ Page } />
-                                {this.buildRoutes(response)}
-                                <Route render={() => { return <Redirect to="/" /> }} />
-                            </Switch> 
-                        </TransitionGroup>
+                        <div className="row">
+                            <TransitionGroup component={firstChild}>
+                                <Switch>
+                                    <Route path="/" component={ Home } exact />
+                                    <Route path="/about" component={ About } exact />
+                                    <Route path="/contact" component={ Contact } exact />
+                                    <Route path="/posts" component={ Post } exact />
+                                    <Route path="/posts/:slug" component={ PostSingle } />
+                                    <Route path="/:slug" component={ Page } />
+                                    {this.buildRoutes(response)}
+                                    <Route render={() => { return <Redirect to="/" /> }} />
+                                </Switch> 
+                            </TransitionGroup>
+                        
                         <Footer />
+                        </div>
                     </div>
                 </Router>
 

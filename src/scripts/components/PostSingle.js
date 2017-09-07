@@ -27,6 +27,16 @@ class PostSingleComponent extends React.Component{
         console.log(location); 
         let slug = location[2]; 
         let post = DataStore.getPostBySlug(slug);
+        
+        let catid = post.categories[0];
+        console.log(catid)
+
+        let cats = post.categories.map((cat, id) => {
+            return (
+            <p key={ id }>Category: {cat} - {catid} - {id}: {post.categories[id].name}</p>
+            )    
+        });
+
         const goBackStyle = {
 			transform: Animated.template`
 				translate3d(${this.state.animate.interpolate({
@@ -40,19 +50,24 @@ class PostSingleComponent extends React.Component{
         return(
             
             <div className="post-single">
-                <h1>{post.title.rendered}</h1> 
-                <Animated.span style={goBackStyle} className="goBack">
-					<a
-						onClick={e => {
-							e.preventDefault();
-							this.props.history.goBack();
-						}}
-					>
-						←
-					</a>
-				</Animated.span>
-				<p dangerouslySetInnerHTML={{__html: post.content.rendered}} />
-                <Link to={`/posts`}>Back to Post Index</Link>
+                <div className="row">
+                    <div className="container">
+                        <h1>{post.title.rendered}</h1> 
+                        <small>{cats}</small> 
+                        <Animated.span style={goBackStyle} className="goBack">
+                            <a
+                                onClick={e => {
+                                    e.preventDefault();
+                                    this.props.history.goBack();
+                                }}
+                            >
+                                ←
+                            </a>
+                        </Animated.span>
+                        <p dangerouslySetInnerHTML={{__html: post.content.rendered}} />
+                        <Link to={`/posts`}>Back to Post Index</Link>
+                    </div>
+                </div>
             </div>
         );
     }

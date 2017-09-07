@@ -15,8 +15,14 @@ class AboutComponent extends React.Component {
 
         return (
             <div className="about-page">
-                <h1>{pageData.title.rendered}</h1>
-                <div dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
+               
+                    <div className="row">
+                        <div className="container">
+                            <h1>{pageData.title.rendered}</h1>
+                            <div dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
+                        </div>
+                    </div>
+
             </div>
         );
     }

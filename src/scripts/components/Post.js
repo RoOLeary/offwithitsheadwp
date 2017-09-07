@@ -18,8 +18,11 @@ class PostComponent extends React.Component{
         return(
 
             <div className="posts-index">
-                <h1>{this.props.title}</h1>
-                Post List will go here.
+                <div className="row">
+                    <div className="container">
+                        <h1>Posts Page</h1> 
+                    </div>
+                </div>
                 <PostList />
 
 

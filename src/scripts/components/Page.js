@@ -10,9 +10,14 @@ class PageComponent extends React.Component {
         let pageData = DataStore.getPageBySlug(slug);
 
         return (
-            <div>
-                <h1>{pageData.title.rendered}</h1>
-                <div dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
+            <div className="page">
+            
+                 <div className="row">
+                     <div className="container">
+                            <h1>{pageData.title.rendered}</h1>
+                            <div dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
+                        </div>
+                </div>
             </div>
         );
     }

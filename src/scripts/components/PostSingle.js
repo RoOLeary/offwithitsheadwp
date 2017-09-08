@@ -37,6 +37,14 @@ class PostSingleComponent extends React.Component{
             )    
         });
 
+        // let tags = post.tags.map((tags, id) => {
+        //     return (
+        //     <li key={ id }>
+        //         <Link to={`/posts/${post.tags[id].slug}`}>{post.tags[id].name}</Link>    
+        //     </li>
+        //     )    
+        // });
+
         const goBackStyle = {
 			transform: Animated.template`
 				translate3d(${this.state.animate.interpolate({
@@ -54,7 +62,9 @@ class PostSingleComponent extends React.Component{
                     <div className="container">
                         <h1>{post.title.rendered}</h1> 
                         <h5>Categories:</h5>
-                        <ul className="categories">{cats}</ul>  
+                        <ul className="categories">{cats}</ul> 
+                        {/* <h5>Tags: </h5> 
+                        <ul className="tags">{tags}</ul>  */}
                         
                         <br />
                         <Animated.span style={goBackStyle} className="goBack">

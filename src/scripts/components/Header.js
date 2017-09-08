@@ -22,7 +22,7 @@ class Header extends React.Component {
                                     <Link to="/" style={{marginRight: '10px'}} >Home</Link>
                                     
                                         {allPages.map((page, i) => {
-                                            if(page.slug != 'frontpage'){
+                                            if(page.slug != 'home'){
                                             return(
                                                     <li key={i}><Link 
                                                         

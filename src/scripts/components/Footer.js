@@ -5,7 +5,7 @@ class Footer extends React.Component {
                 <div className="container">
                     <div className="row row-pb-md">
                         <div className="col-md-4 fh5co-widget">
-                            <h4>Air</h4>
+                            <h4>RoACT</h4>
                             <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
                         </div>
                         <div className="col-md-2 col-md-push-1 fh5co-widget">

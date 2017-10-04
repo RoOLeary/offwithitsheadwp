@@ -29,13 +29,13 @@ class PostSingleComponent extends React.Component{
         let slug = location[2]; 
         let post = DataStore.getPostBySlug(slug);
     
-        let cats = post.cats.map((cats, id) => {
+        let cats = (post.cats) ? post.cats.map((cats, id) => {
             return (
             <li key={ id }>
                 <Link to={`/posts/${post.cats[id].slug}`}>{post.cats[id].name}</Link>    
             </li>
             )    
-        });
+        }) : false;
 
         // let tags = post.tags.map((tags, id) => {
         //     return (
@@ -60,9 +60,13 @@ class PostSingleComponent extends React.Component{
             <div className="post-single">
                 <div className="row">
                     <div className="container">
-                        <h1>{post.title.rendered}</h1> 
-                        <h5>Categories:</h5>
-                        <ul className="categories">{cats}</ul> 
+                        <h1>{post.title.rendered}</h1>
+                        { cats &&
+                        <div>
+                            <h5>Categories:</h5>
+                            <ul className="categories">{cats}</ul>
+                        </div>
+                        }
                         {/* <h5>Tags: </h5> 
                         <ul className="tags">{tags}</ul>  */}
                         

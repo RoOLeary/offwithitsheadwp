@@ -18,7 +18,7 @@ class Header extends React.Component {
                                         <Link to="/" key="home">RoACT</Link></div>
                                     </div>
                                 <div className="col-xs-10 text-right menu-1">
-                                    <ul>
+                                    <ul id="navigation">
                                     <Link to="/" style={{marginRight: '10px'}} >Home</Link>
                                     
                                         {allPages.map((page, i) => {

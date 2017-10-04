@@ -23,7 +23,7 @@ class HomeComponent extends React.Component {
                                         <h1>{pageData.title.rendered}</h1>
                                         {/* <small>I'm being output from the component</small> */}
                                         <div dangerouslySetInnerHTML={{__html: pageData.content.rendered}} />
-                                        <p><Link to={`/posts`} className="btn btn-primary btn-lg btn-demo">View Demo</Link><a className="btn btn-primary btn-lg btn-learn">Learn More</a></p>
+                                        <p><Link to={`/posts`} className="btn btn-primary btn-lg btn-demo">Hi Paddy</Link><a className="btn btn-primary btn-lg btn-learn">Learn More</a></p>
                                     </div>
                                 </div>
                             </div>

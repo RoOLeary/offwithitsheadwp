@@ -10,7 +10,7 @@ class NotFoundComponent extends React.Component {
                  <div className="row">
                      <div className="container">
                             <h1>404 - Nothing Found</h1>
-                            <p>Fuck all here mate, look somewhere else</p>
+                            <p>Nada here mate, look somewhere else</p>
                         </div>
                 </div>
             </div>

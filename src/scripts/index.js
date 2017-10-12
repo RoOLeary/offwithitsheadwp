@@ -76,7 +76,7 @@ class AppInitializer {
                     </div>
                 </Router>
 
-                , document.getElementById('app')
+                , document.querySelector('#app')
             );
         });
     }

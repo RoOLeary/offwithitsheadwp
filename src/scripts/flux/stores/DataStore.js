@@ -14,6 +14,7 @@ class DataStore {
             getAll:         this.getAll,
             getAllPages:    this.getAllPages,
             getAllPosts:    this.getAllPosts,
+            getAllCats:     this.getAllCats,
             getPageBySlug:  this.getPageBySlug,
             getPostBySlug:  this.getPostBySlug
         });
@@ -38,6 +39,12 @@ class DataStore {
     getAllPosts() { 
         return this.getState().data.posts; 
     }
+
+     // Returns all Categories
+    getAllCats() {
+        return this.getState().data.cats; 
+    }
+
 
     // Returns a Page by provided slug
     getPageBySlug(slug){

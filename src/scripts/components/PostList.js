@@ -28,7 +28,7 @@ class PostList extends React.Component{
                                     <ul className="categories">
                                         {post.cats.map((cats, term_id) =>
                                         <li key={term_id}>
-                                            <Link to={`/posts/${post.cats[term_id].slug}`}>
+                                            <Link to={`/category/${post.cats[term_id].slug}`}>
                                                 {post.cats[term_id].name}
                                             </Link>
                                         </li>

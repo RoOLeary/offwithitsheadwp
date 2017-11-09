@@ -9,6 +9,9 @@ import Page                 from 'components/Page.js';
 import Post                 from 'components/Post.js';
 import PostList             from 'components/PostList.js';
 import PostSingle           from 'components/PostSingle.js';
+
+import CategoryList         from 'components/CategoryList.js';
+import CategorySingle       from 'components/CategorySingle.js';
 import Contact              from 'components/Contact.js';
 import Header               from 'components/Header.js';
 import Footer               from 'components/Footer.js';
@@ -65,6 +68,9 @@ class AppInitializer {
                                     <Route path="/contact" component={ Contact } exact />
                                     <Route path="/posts" component={ Post } exact />
                                     <Route path="/posts/:slug" component={ PostSingle } />
+                                    <Route path="/category/:slug" component={ CategorySingle } />
+                                    <Route path="/category" component={ CategoryList } />
+                                    <Route path="/tags/:slug" component={ CategoryList } />
                                     <Route path="/:slug" component={ NoMatch } />
                                     {this.buildRoutes(response)}
                                     <Route render={() => { return <Redirect to="/" /> }} />

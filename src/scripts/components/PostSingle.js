@@ -19,7 +19,7 @@ class PostSingleComponent extends React.Component{
     }
 
     componentDidMount(){
-      console.log('Single Post Component')   
+      console.log('Single Post Component-ah!')   
     }
 
 
@@ -32,18 +32,18 @@ class PostSingleComponent extends React.Component{
         let cats = (post.cats) ? post.cats.map((cats, id) => {
             return (
             <li key={ id }>
-                <Link to={`/posts/${post.cats[id].slug}`}>{post.cats[id].name}</Link>    
+                <Link to={`/category/${post.cats[id].slug}`}>{post.cats[id].name}</Link>    
             </li>
             )    
         }) : false;
 
-        // let tags = post.tags.map((tags, id) => {
-        //     return (
-        //     <li key={ id }>
-        //         <Link to={`/posts/${post.tags[id].slug}`}>{post.tags[id].name}</Link>    
-        //     </li>
-        //     )    
-        // });
+        let tags = (post.tags) ? post.tags.map((tags, id) => {
+            return (
+            <li key={ id }>
+                <Link to={`/tags/${post.tags[id].slug}`}>{post.tags[id].name}</Link>    
+            </li>
+            )    
+        }) : false;
 
         const goBackStyle = {
 			transform: Animated.template`
@@ -67,8 +67,12 @@ class PostSingleComponent extends React.Component{
                             <ul className="categories">{cats}</ul>
                         </div>
                         }
-                        {/* <h5>Tags: </h5> 
-                        <ul className="tags">{tags}</ul>  */}
+                        { tags &&
+                        <div>
+                            <h5>Tags: </h5>
+                            <ul className="tags">{tags}</ul> 
+                        </div>
+                        }
                         
                         <br />
                         <Animated.span style={goBackStyle} className="goBack">

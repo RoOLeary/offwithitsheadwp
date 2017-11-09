@@ -1,3 +1,4 @@
+import DataActions  from 'flux/actions/DataActions.js'; 
 import DataStore from 'flux/stores/DataStore.js'; 
 import { browserHistory } from 'react-router-dom'; 
 import { Link } from 'react-router-dom'; 
@@ -37,7 +38,7 @@ class CategorySingleComponent extends React.Component{
                         <p>Cat Title to Go here</p>
                         <div>
                             <small>Category Items will go here</small>
-
+                            {cats}
                             <ul>
                                 <li>Article 1</li>
                                 <li>Article 2</li>

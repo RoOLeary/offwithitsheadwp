@@ -7,15 +7,16 @@ import * as Animated from "animated/lib/targets/react-dom";
 
 class CategoryListComponent extends React.Component{
 
-
     componentDidMount(){
-        console.log('category list component mounted'); 
+  
+          console.log('category list component mounted'); 
+        
     }
    
-    render() {
+    render(){
 
-        let categories = DataStore.getAllCats();
-        console.log(categories);
+        let categories = DataStore.getAllCategories();
+        console.log("should be a blort of the cats");
 
         return (
 
@@ -23,6 +24,7 @@ class CategoryListComponent extends React.Component{
                 <div className="row">
                      <div className="container">
                         Categories List: 
+
                         <ul>
                             <li>
                             <Link to={`/category/floop`}>Floop</Link>

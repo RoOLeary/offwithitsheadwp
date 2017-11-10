@@ -63,6 +63,17 @@ class DataStore {
         })] || {};
     }
 
+    // New method for getting a category by slug. 
+    // TODO: Hook this brotha up! :)
+    // Should hopefully work for terms and taxonomies too. 
+    
+    getCategoriesBySlug(slug){
+        const cats = this.getState().data.categories;
+        return cats[Object.keys(cats).find((cat, i) => {
+            return cats[cat].slug === slug;
+        })] || {};
+    }
+
 }
 
 export default alt.createStore(DataStore, 'DataStore');

@@ -42,6 +42,7 @@ class DataStore {
 
      // Returns all Categories
     getAllCategories() {
+        console.log("from the store...");
         return this.getState().data.categories;   
     }
 

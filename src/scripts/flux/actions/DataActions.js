@@ -9,6 +9,7 @@ class DataActions {
         this.pagesEndPoint = `${appUrl}/wp-json/wp/v2/pages`; // Endpoint for getting Wordpress Pages
         this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts`; // Endpoint for getting Wordpress Posts
         this.categoriesEndPoint  = `${appUrl}/wp-json/wp/v2/categories`; // Endpoint for getting Categories
+        //this.menusEndPoint = `${appUrl}/wp-json/wp-api-menus/v2/menus/`; // Endpoint for getting Wordpress Menus
 
     }
 
@@ -17,7 +18,7 @@ class DataActions {
         return new Promise((resolve, reject) => {
             axios.get(endPoint).then((response) => {
                 resolve(response.data);
-               // console.log(response.data); 
+                console.log(response.data);
             }).catch((error) => {
                 reject(error);
             }); 
@@ -27,27 +28,27 @@ class DataActions {
     // Method for getting Pages data
     getPages(cb){
         this.api(this.pagesEndPoint).then((response)=>{
-            this.getPosts(response, cb)
-            console.log(response);
+            //console.log(response);
+            this.getCategories(response, cb)
         });
         return true;
     }
 
-    // Method for getting Categories 
-    getCategories(cb){
-         this.api(this.categoriesEndPoint).then((response)=>{
-            this.getPosts(response, cb)
-            console.log(response);
-        });
-        return true;
-    }
+    // Method for getCategories
+	getCategories(pages, cb){
+	    this.api(this.categoriesEndPoint).then((response)=>{
+            const categories 	= response
+            const pagesAndcats 	= { pages, categories };
+            this.getPosts(pagesAndcats, cb)
+	   	});		
+           
+	}
 
     // Method for getting Posts data
-    getPosts(pages, cb){
+    getPosts(pagesAndcats, cb){
         this.api(this.postsEndPoint).then((response)=>{
-            const posts     = response
-            const payload   = { pages, posts };
-            console.log(response);
+            const postsObj 	= {posts: response}
+	    	const payload 	= Object.assign(pagesAndcats, postsObj);
             this.getSuccess(payload); // Pass returned data to the store
             cb(payload); // This callback will be used for dynamic rout building
         });

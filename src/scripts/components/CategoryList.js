@@ -1,3 +1,4 @@
+
 import DataStore from 'flux/stores/DataStore.js'; 
 import { browserHistory } from 'react-router-dom'; 
 import { Link } from 'react-router-dom'; 
@@ -15,25 +16,24 @@ class CategoryListComponent extends React.Component{
    
     render(){
 
-        let categories = DataStore.getAllCategories();
-        console.log("should be a blort of the cats");
+        let cats = DataStore.getAllCategories();
+        
 
         return (
 
             <div className="all-posts">
                 <div className="row">
                      <div className="container">
-                        Categories List: 
-
                         <ul>
-                            <li>
-                            <Link to={`/category/floop`}>Floop</Link>
-                            </li>
-                            <li>
-                                <Link to={`/category/ronan`}>Ronan</Link>   
-                            </li>
-                        </ul>
+                        {cats.map((cat, i) =>
+                            
+                        <li key={ cat.id }>
+                            <h3><Link to={`/category/${cat.slug}`}>{cat.name}</Link></h3>
+                            
+                        </li>
                         
+                        )}
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -43,7 +43,7 @@ class DataActions {
             // rightio, send this on to the getPosts method
             this.getPosts(pagesAndcats, cb)
 	   	});		
-           
+        return true; 
 	}
 
     // Method for getting Posts data

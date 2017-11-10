@@ -72,6 +72,7 @@ class AppInitializer {
                                     <Route path="/category" component={ CategoryList } />
                                     <Route path="/tags/:slug" component={ CategoryList } />
                                     <Route path="/:slug" component={ NoMatch } />
+                                    <Route component={ NoMatch } />
                                     {this.buildRoutes(response)}
                                     <Route render={() => { return <Redirect to="/" /> }} />
                                 </Switch> 

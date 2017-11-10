@@ -28,17 +28,19 @@ class DataActions {
     // Method for getting Pages data
     getPages(cb){
         this.api(this.pagesEndPoint).then((response)=>{
-            //console.log(response);
+            //pass this along to the next method
             this.getCategories(response, cb)
         });
         return true;
     }
 
     // Method for getCategories
+    // accepts the pages object from getPages, mashes these fella's together
 	getCategories(pages, cb){
 	    this.api(this.categoriesEndPoint).then((response)=>{
             const categories 	= response
             const pagesAndcats 	= { pages, categories };
+            // rightio, send this on to the getPosts method
             this.getPosts(pagesAndcats, cb)
 	   	});		
            
@@ -48,6 +50,7 @@ class DataActions {
     getPosts(pagesAndcats, cb){
         this.api(this.postsEndPoint).then((response)=>{
             const postsObj 	= {posts: response}
+            // ready the payload add the postsObj and then away we go!
 	    	const payload 	= Object.assign(pagesAndcats, postsObj);
             this.getSuccess(payload); // Pass returned data to the store
             cb(payload); // This callback will be used for dynamic rout building

@@ -1,8 +1,26 @@
 import {Link} from 'react-router-dom';
 import DataStore from 'flux/stores/DataStore.js'
 
+const Spacer = () => {
+
+    return(
+        <div className="spacer">
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    )
+}
+
+
 class Header extends React.Component {   
    
+
+    testMe = () => {
+        alert('testing'); 
+        console.log('coming from header')
+    }
+
     render() {
         let allPages = DataStore.getAllPages();
         allPages = _.sortBy(allPages, [function(page) { return page.menu_order; }]); // Sort pages by order
@@ -15,8 +33,11 @@ class Header extends React.Component {
                             <div className="row">
                                 <div className="col-xs-2">
                                     <div id="fh5co-logo">
-                                        <Link to="/" key="home">RoACT</Link></div>
+                                        {/* <Link to="/" key="home">RoACT</Link> */}
+                                        <Spacer />
+                                        <button onClick={this.testMe}>Woof</button>
                                     </div>
+                                </div>
                                 <div className="col-xs-10 text-right menu-1">
                                     <ul id="navigation">
                                     <Link to="/" style={{marginRight: '10px'}} >Home</Link>

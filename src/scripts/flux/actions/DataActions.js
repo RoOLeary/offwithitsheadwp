@@ -29,6 +29,7 @@ class DataActions {
     getPages(cb){
         this.api(this.pagesEndPoint).then((response)=>{
             //pass this along to the next method
+            console.log(response)
             this.getCategories(response, cb)
         });
         return true;
